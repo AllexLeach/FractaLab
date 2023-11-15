@@ -1,0 +1,1304 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin-top: 0;
+  overflow-X: hidden;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 27px;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+@media (min-width: 320px) {
+  .title {
+    font-size: 46px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+  }
+  .subtitle {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+  }
+  .main_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_body .main_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    margin-top: -10vw;
+  }
+  .main_body .main_content .flex_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5vw;
+  }
+  .main_body .main_content .fractal_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+    gap: 1vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .main_body .main_content .fractal_list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    font-size: 20px;
+  }
+  .main_body .main_content .fractal_list li .julia {
+    width: 30px;
+  }
+  .main_body .main_content .fractal_list li p {
+    transition: 0.5s ease-out;
+    padding: 5px;
+  }
+  .main_body .main_content .fractal_list li p a {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+  }
+  .main_body .main_content .fractal_list li p:hover {
+    background: rgb(237, 237, 237);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+    background-position: 0, 15px;
+  }
+  .body_ft {
+    display: flex;
+    flex-direction: column;
+    transition: 0.7s ease-in-out;
+  }
+  .body_ft .head {
+    transition: 0.7s ease-in-out;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 40px;
+    background: rgb(218, 218, 218);
+  }
+  .body_ft .head .main_icon {
+    position: fixed;
+    top: 1vw;
+    z-index: 4;
+  }
+  .body_ft .head .main_icon img {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    animation: postRotateLittelIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
+  }
+  .body_ft .head .head_list {
+    position: fixed;
+    z-index: 3;
+    top: 2.5vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25vw;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .body_ft .head .head_list .l-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-300px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-300px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-300px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-300px, 0);
+    width: 235px;
+  }
+  .head.active {
+    height: 150px;
+  }
+  .head.active .main_icon img {
+    animation: rotateLittleIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
+  }
+  .head.active .head_list .l-1 {
+    transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(50px, 0);
+  }
+  .head.active .head_list .l-1:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .head.active .head_list .l-2 {
+    transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(50px, 0);
+  }
+  .head.active .head_list .l-2:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .head.active .head_list .l-3 {
+    transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(50px, 0);
+  }
+  .head.active .head_list .l-3:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .head.active .head_list .l-4 {
+    transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(50px, 0);
+  }
+  .head.active .head_list .l-4:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .main_info_container {
+    position: relative;
+    z-index: 1;
+    width: 95%;
+    margin-top: 50px;
+    margin-left: 2.5vw;
+    padding-bottom: 1vw;
+  }
+  .main_info_container p {
+    text-indent: 10px;
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+  }
+  .educational_program_of_fractal {
+    margin-top: 0.5vw;
+  }
+  .educational_program_of_fractal .title {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    border-radius: 10px;
+  }
+  .educational_program_of_fractal .draw_under_title {
+    position: absolute;
+    z-index: 1;
+    width: 345px;
+    height: 40px;
+    background: rgb(199, 199, 199);
+    border-bottom-left-radius: 60px 40px;
+    border-bottom-right-radius: 50px 20px;
+    border-top-left-radius: 50px 20px;
+    border-top-right-radius: 60px 40px;
+    transform: rotate(-1.75deg) translate(-15px, -40px);
+  }
+  .educational_program_of_fractal p {
+    margin-top: 0.15vw;
+  }
+  .list_fractals {
+    margin-top: 0.2vw;
+  }
+  .list_fractals p {
+    text-indent: 0px;
+  }
+  .list_fractals .types_of_fractals {
+    padding-left: 45px;
+  }
+  .list_fractals .types_of_fractals li {
+    margin-top: 0.4vw;
+  }
+  .list_fractals .types_of_fractals ::marker {
+    font-size: 22px;
+  }
+  .list_fractals .types_of_fractals p {
+    text-indent: 10px;
+  }
+  .first_type {
+    margin-top: 0.8vw;
+  }
+  .subtitle_with_under_paint {
+    display: flex;
+  }
+  .subtitle_with_under_paint .subtitle {
+    position: relative;
+    z-index: 2;
+  }
+  .subtitle_with_under_paint .draw_under_subtitle {
+    position: absolute;
+    z-index: 1;
+    width: 200px;
+    height: 30px;
+    background: rgb(199, 199, 199);
+    border-bottom-left-radius: 60px 40px;
+    border-bottom-right-radius: 50px 20px;
+    border-top-left-radius: 50px 20px;
+    border-top-right-radius: 60px 40px;
+    transform: rotate(-1.75deg) translate(-10px, -2.5px);
+  }
+  .geometry {
+    margin-top: 0.5vw;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .geometry img {
+    max-width: 400px;
+    max-height: 310px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .geometry .text_gfractal {
+    max-width: 1350px;
+  }
+  .geometry .text_gfractal p {
+    margin-top: 0.15vw;
+  }
+  .second_type {
+    margin-top: 0.75vw;
+  }
+  .second_type .subtitle_with_under_paint {
+    flex-direction: row;
+    margin-right: 1.5vw;
+  }
+  .second_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 200px;
+    transform: rotate(-1.75deg) translate(-7px, -2.5px);
+  }
+  .second_type .algebra {
+    margin-top: 0.7vw;
+  }
+  .second_type .algebra .list_and_exemple {
+    display: flex;
+    flex-direction: column;
+  }
+  .second_type .algebra .list_and_exemple .list_alg {
+    margin-top: 0.3vw;
+    padding-left: 45px;
+    list-style-type: decimal;
+  }
+  .second_type .algebra .list_and_exemple .list_alg ::marker {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .second_type .algebra .list_and_exemple .list_alg li {
+    margin-top: 0.3vw;
+  }
+  .second_type .algebra .list_and_exemple .plenty {
+    display: flex;
+    margin-top: 1.5vw;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod, .second_type .algebra .list_and_exemple .julia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod h2, .second_type .algebra .list_and_exemple .julia h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod img, .second_type .algebra .list_and_exemple .julia img {
+    margin: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 45vw;
+    height: 100px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .therd_type {
+    margin-top: 2.5vw;
+  }
+  .therd_type .draw_under_subtitle {
+    width: 185px;
+    transform: rotate(-1.75deg) translate(-10px, -2.5px);
+  }
+  .therd_type .stoh {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5vw;
+  }
+  .therd_type .stoh p {
+    margin-top: 0.15vw;
+  }
+  .therd_type .stoh .plazma_exemple {
+    margin-top: 0.4vw;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1vw;
+  }
+  .therd_type .stoh .plazma_exemple img {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    max-height: 210px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .therd_type .stoh .plazma_exemple p {
+    margin: 0;
+    max-width: 1400px;
+  }
+  .koch_main {
+    display: block;
+    margin-top: 0.5vw;
+    margin-left: 1vw;
+    width: 98%;
+  }
+  .koch_up {
+    display: flex;
+    gap: 1vw;
+  }
+  .koch_up .drawing_koch .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5vw;
+  }
+  .koch_up .drawing_koch .buttons select {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    border-radius: 7.5px;
+  }
+  .koch_up .drawing_koch .buttons .rev_btn {
+    display: flex;
+    gap: 0.5vw;
+  }
+  .koch_up .drawing_koch .button_for_reverse {
+    border-radius: 20px;
+    box-shadow: 0 0 4px 2px rgb(100, 100, 100);
+  }
+  .koch_up .drawing_koch .button_for_reverse .btn_koch {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: none;
+  }
+  .koch_up .drawing_koch .button_for_reverse .btn_koch img {
+    width: 25px;
+    object-fit: fill;
+    padding: 4px;
+    margin-right: 1.5vw;
+    margin-left: 0;
+    transition: 0.5s ease-out;
+  }
+  .koch_up .drawing_koch .button_for_reverse .btn_koch.reverse img {
+    margin-right: 0;
+    margin-left: 1.5vw;
+  }
+  .koch_up .koch_pref {
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    gap: 0.5vw;
+  }
+  .koch_up .koch_pref p {
+    text-indent: 10px;
+  }
+  .info_koch {
+    margin-top: 0.5vw;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+  }
+  .info_koch .list_koch {
+    margin-top: 0.3vw;
+    padding-left: 30px;
+  }
+}
+@media (min-width: 385px) {
+  .title {
+    font-size: 50px;
+  }
+  .subtitle {
+    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+  }
+  .main_body .main_content .fractal_list li {
+    gap: 2.5vw;
+  }
+  .main_body .main_content .fractal_list li p a {
+    font-size: 22px;
+  }
+  .subtitle_with_under_paint .draw_under_subtitle {
+    width: 230px;
+    height: 32.5px;
+    transform: rotate(-1.75deg) translate(-10px, 0px);
+  }
+  .second_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 240px;
+    height: 32.5px;
+    transform: rotate(-1.75deg) translate(-10px, 0px);
+  }
+  .therd_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 220px;
+    height: 32.5px;
+    transform: rotate(-1.75deg) translate(-10px, 0px);
+  }
+}
+@media (min-width: 410px) {
+  .title {
+    font-size: 50px;
+  }
+  .subtitle {
+    font-size: 26px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+  }
+  .main_body .main_content .fractal_list li p a {
+    font-size: 24px;
+  }
+  .subtitle_with_under_paint .subtitle {
+    font-size: 25px;
+  }
+  .subtitle_with_under_paint .draw_under_subtitle {
+    width: 240px;
+    height: 35px;
+    transform: rotate(-1.75deg) translate(-10px, -0.5px);
+  }
+  .second_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 252px;
+    height: 35px;
+    transform: rotate(-1.75deg) translate(-10px, 0px);
+  }
+  .therd_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 230px;
+    height: 35px;
+    transform: rotate(-1.75deg) translate(-10px, 0px);
+  }
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 54px;
+  }
+  .subtitle {
+    font-size: 24px;
+  }
+  .main_body .main_content .fractal_list li {
+    gap: 2.5vw;
+  }
+  .main_body .main_content .fractal_list li p a {
+    font-size: 26px;
+  }
+  .body_ft {
+    display: grid;
+    grid-template-columns: var(--left, 55px) auto;
+    grid-template-rows: none;
+    transition: 0.7s ease-in-out;
+  }
+  .body_ft .head {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 100%;
+    height: 100%;
+    background: rgb(218, 218, 218);
+  }
+  .body_ft .head .main_icon {
+    position: fixed;
+    top: 0.5vw;
+  }
+  .body_ft .head .main_icon img {
+    margin-left: 0vw;
+    right: 1vw;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    animation: postRotateLittelIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
+  }
+  .body_ft .head .head_list {
+    position: fixed;
+    top: 5vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25vw;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .body_ft .head .head_list .l-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft:has(.head.active) {
+    --left: 250px;
+  }
+  .body_ft:has(.head.active) .main_icon img {
+    animation: rotateLittleIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
+  }
+  .body_ft:has(.head.active) .head_list .l-1 {
+    transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-1:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .body_ft:has(.head.active) .head_list .l-2 {
+    transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-2:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .body_ft:has(.head.active) .head_list .l-3 {
+    transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-3:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .body_ft:has(.head.active) .head_list .l-4 {
+    transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-4:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .main_info_container {
+    margin-top: 0.5vw;
+  }
+  .main_info_container p {
+    font-size: 20px;
+  }
+  .educational_program_of_fractal p {
+    font-size: 20px;
+  }
+  .geometry {
+    flex-direction: row;
+  }
+  .geometry img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+  .geometry .text_gfractal p {
+    font-size: 20px;
+  }
+  .second_type .algebra .list_and_exemple {
+    flex-direction: row;
+  }
+  .second_type .algebra .list_and_exemple .list_alg {
+    flex: 55%;
+  }
+  .second_type .algebra .list_and_exemple .plenty {
+    flex: 45%;
+    justify-content: space-between;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod, .second_type .algebra .list_and_exemple .julia {
+    flex-direction: column-reverse;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod h2, .second_type .algebra .list_and_exemple .julia h2 {
+    font-size: 20px;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod img, .second_type .algebra .list_and_exemple .julia img {
+    max-width: 45vw;
+    height: 150px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .therd_type .stoh .plazma_exemple {
+    gap: 0.5vw;
+  }
+  .therd_type .stoh .plazma_exemple img {
+    margin-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .geometry img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}
+@media (min-width: 1440px) {
+  .main_info_container {
+    margin-top: 0.5vw;
+  }
+  .geometry {
+    justify-content: space-between;
+  }
+  .geometry img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+}
+@media (min-width: 1880px) {
+  .title {
+    font-size: 60px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+  }
+  .subtitle {
+    font-size: 26px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+  }
+  .main_body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_body .main_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  .main_body .main_content .fractal_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50%;
+  }
+  .main_body .main_content .fractal_list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+    font-size: 20px;
+  }
+  .main_body .main_content .fractal_list li p {
+    transition: 0.5s ease-out;
+  }
+  .main_body .main_content .fractal_list li p:hover {
+    font-size: 28px;
+  }
+  .body_ft {
+    display: grid;
+    grid-template-columns: var(--left, 75px) auto;
+    grid-template-rows: none;
+    transition: 0.7s ease-in-out;
+  }
+  .body_ft .head {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 100%;
+    height: 100%;
+    background: rgb(218, 218, 218);
+  }
+  .body_ft .head .main_icon {
+    position: fixed;
+    top: 0.5vw;
+  }
+  .body_ft .head .main_icon img {
+    right: 1vw;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    animation: postRotateIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
+  }
+  .body_ft .head .head_list {
+    position: fixed;
+    top: 5vw;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25vw;
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .body_ft .head .head_list .l-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft .head .head_list .l-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 0;
+    transform: translate(-150px, 0);
+    width: 235px;
+  }
+  .body_ft:has(.head.active) {
+    --left: 250px;
+  }
+  .body_ft:has(.head.active) .main_icon img {
+    animation: rotateIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
+  }
+  .body_ft:has(.head.active) .head_list .l-1 {
+    transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-1:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .body_ft:has(.head.active) .head_list .l-2 {
+    transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-2:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .body_ft:has(.head.active) .head_list .l-3 {
+    transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-3:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .body_ft:has(.head.active) .head_list .l-4 {
+    transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  .body_ft:has(.head.active) .head_list .l-4:hover {
+    transition: 0.6s ease-in-out;
+    background: rgb(255, 240, 240);
+    border-bottom-right-radius: 60px 40px;
+    border-bottom-left-radius: 50px 20px;
+    border-top-right-radius: 50px 20px;
+    border-top-left-radius: 60px 40px;
+  }
+  .main_info_container {
+    margin-top: 0;
+    width: 95%;
+    margin-left: 2.5vw;
+    padding-bottom: 1vw;
+  }
+  .main_info_container p {
+    text-indent: 10px;
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+  }
+  .educational_program_of_fractal {
+    margin-top: 0.5vw;
+  }
+  .educational_program_of_fractal .title {
+    position: relative;
+    z-index: 2;
+    font-size: 36px;
+    border-radius: 10px;
+  }
+  .educational_program_of_fractal .draw_under_title {
+    position: absolute;
+    z-index: 1;
+    width: 235px;
+    height: 55px;
+    background: rgb(199, 199, 199);
+    border-bottom-left-radius: 60px 40px;
+    border-bottom-right-radius: 50px 20px;
+    border-top-left-radius: 50px 20px;
+    border-top-right-radius: 60px 40px;
+    transform: rotate(-1.75deg) translate(-15px, -50px);
+  }
+  .educational_program_of_fractal p {
+    margin-top: 0.15vw;
+  }
+  .list_fractals {
+    margin-top: 0.2vw;
+  }
+  .list_fractals p {
+    text-indent: 0px;
+  }
+  .list_fractals .types_of_fractals {
+    padding-left: 45px;
+  }
+  .list_fractals .types_of_fractals li {
+    margin-top: 0.4vw;
+  }
+  .list_fractals .types_of_fractals ::marker {
+    font-size: 22px;
+  }
+  .list_fractals .types_of_fractals p {
+    text-indent: 10px;
+  }
+  .first_type {
+    margin-top: 0.8vw;
+  }
+  .subtitle_with_under_paint {
+    display: flex;
+  }
+  .subtitle_with_under_paint .subtitle {
+    position: relative;
+    z-index: 2;
+  }
+  .subtitle_with_under_paint .draw_under_subtitle {
+    position: absolute;
+    z-index: 1;
+    width: 240px;
+    height: 45px;
+    background: rgb(199, 199, 199);
+    border-bottom-left-radius: 60px 40px;
+    border-bottom-right-radius: 50px 20px;
+    border-top-left-radius: 50px 20px;
+    border-top-right-radius: 60px 40px;
+    transform: rotate(-1.75deg) translate(-10px, -5px);
+  }
+  .geometry {
+    margin-top: 0.5vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .geometry img {
+    max-width: 400px;
+    max-height: 310px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .geometry .text_gfractal {
+    max-width: 1350px;
+    max-height: 310px;
+  }
+  .geometry .text_gfractal p {
+    font-size: 24px;
+    margin-top: 0.15vw;
+  }
+  .second_type {
+    margin-top: 0.75vw;
+  }
+  .second_type .subtitle_with_under_paint {
+    flex-direction: row-reverse;
+    margin-right: 1.5vw;
+  }
+  .second_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 250px;
+    height: 45px;
+    transform: rotate(-1.75deg) translate(-140px, -10px);
+  }
+  .second_type .algebra {
+    margin-top: 0.7vw;
+  }
+  .second_type .algebra .list_and_exemple {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .second_type .algebra .list_and_exemple .list_alg {
+    flex: 55%;
+    height: 240px;
+    margin-top: 0.3vw;
+    padding-left: 45px;
+    list-style-type: decimal;
+  }
+  .second_type .algebra .list_and_exemple .list_alg ::marker {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .second_type .algebra .list_and_exemple .list_alg li {
+    margin-top: 0.3vw;
+  }
+  .second_type .algebra .list_and_exemple .plenty {
+    flex: 45%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod, .second_type .algebra .list_and_exemple .julia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod img, .second_type .algebra .list_and_exemple .julia img {
+    margin: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 50vw;
+    height: 200px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .second_type .algebra .list_and_exemple .mandelbrod h2, .second_type .algebra .list_and_exemple .julia h2 {
+    font-size: 24px;
+  }
+  .therd_type {
+    margin-top: 0;
+  }
+  .therd_type .subtitle_with_under_paint .draw_under_subtitle {
+    width: 232.5px;
+    height: 45px;
+    transform: rotate(-1.75deg) translate(-12px, -5px);
+  }
+  .therd_type .stoh {
+    margin-top: 0.5vw;
+  }
+  .therd_type .stoh p {
+    margin-top: 0.5vw;
+  }
+  .therd_type .stoh .plazma_exemple {
+    margin-top: 0.4vw;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+  }
+  .therd_type .stoh .plazma_exemple img {
+    margin: 0;
+    margin-top: 0.5vw;
+    max-height: 350px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+  .therd_type .stoh .plazma_exemple p {
+    margin: 0;
+    max-width: 1400px;
+    max-height: 210px;
+  }
+  main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  main .canvas {
+    position: relative;
+    margin-left: 5vw;
+    padding-top: 2vw;
+    font-size: 34px;
+    font-family: "Open Sans", sans-serif;
+  }
+  input {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+  }
+  #canvas {
+    margin-left: 5vw;
+    margin-top: 2vw;
+  }
+  .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .body #canvas_Koch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  .tb_color, tr, td {
+    border: 1.5px solid black;
+    border-collapse: collapse;
+    padding: 2.5px;
+  }
+  .variables {
+    display: flex;
+    width: 1050px;
+    margin-top: 2vw;
+    margin-left: 2.5vw;
+    gap: 1vw;
+  }
+  .variables .a {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    gap: 1vw;
+  }
+  .variables .a .var {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: start;
+    width: 100%;
+    height: 100px;
+    gap: 0.5vw;
+  }
+  .variables .a .var .input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .variables .a .var .input em {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .variables .a .not_input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5vw;
+  }
+  .variables .a .not_input .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    gap: 0.5vw;
+  }
+  .variables .select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 285px;
+  }
+  .variables .select select {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+  }
+  .variables .select .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: start;
+    width: 285px;
+    gap: 0.5vw;
+  }
+  .variables .select .button button {
+    width: 100%;
+    padding: 7.5px;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+@keyframes rotateIcon {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+  50% {
+    transform: rotate(180deg);
+    width: 25px;
+    height: 25px;
+  }
+  100% {
+    transform: rotate(360deg);
+    width: 50px;
+    height: 50px;
+  }
+}
+@keyframes postRotateIcon {
+  0% {
+    transform: rotate(360deg);
+    width: 50px;
+    height: 50px;
+  }
+  50% {
+    transform: rotate(180deg);
+    width: 25px;
+    height: 25px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+  }
+}
+@keyframes rotateLittleIcon {
+  0% {
+    width: 30px;
+    height: 30px;
+  }
+  50% {
+    transform: rotate(180deg);
+    width: 15px;
+    height: 15px;
+  }
+  100% {
+    transform: rotate(360deg);
+    width: 30px;
+    height: 30px;
+  }
+}
+@keyframes postRotateLittelIcon {
+  0% {
+    transform: rotate(360deg);
+    width: 30px;
+    height: 30px;
+  }
+  50% {
+    transform: rotate(180deg);
+    width: 15px;
+    height: 15px;
+  }
+  100% {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/*# sourceMappingURL=canvas.css.map */
