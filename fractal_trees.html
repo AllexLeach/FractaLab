@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Fractal Tree Algorithm</title>
+      <link rel="prerender" href="./canvas_julia.html">
+      <link rel="stylesheet" href="./canvas.css">
+      <script defer src="./canvas.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script defer src="./app.js"></script>
+   </head>
+   <body class="body_ft">
+      <header class="head">
+         <span class="main_icon"><img src="https://cdn-icons-png.flaticon.com/512/2099/2099192.png"></span>
+         <ul class="head_list">
+            <li class="l-1"><a href="./main_fractal.html">Главная страница</a></li>
+            <li class="l-3"><a href="./fractal_theory.html">Краткий ликбез</a></li>
+            <li class="l-2"><a href="./Koch.html">Снежинка Коха</a></li>
+            <li class="l-4"><a href="./canvas_julia.html">Множество Жулиа</a></li>
+         </ul>
+      </header>
+      <div>
+         <div class="canvas_pev">
+            <h1 class="canvas">Фрактальное дерево</h1>
+            <canvas id="canvas"></canvas>
+            <div class="variables">
+               <div class="a">
+                  <div class="var">
+                     <div class="input">
+                        <label>На сколько поделить &#960; - <br><em>т. е. градусы <br>"желательно 6 или 5"</em></label>
+                        <input type="number" id="branchAngle"></input>
+                     </div>
+                     <div class="input">
+                        <label>Направление средней дополнительной ветки <br><em>"желательна половина от первого значения"</em></label>
+                        <input type="number" id="angle3"></input>
+                     </div>
+                     <div class="input">
+                        <label>Длинна ветки. <em>вычисляется делением высоты на введённое значение "желательно 3.5 / 4"</em></label>
+                        <input type="number" id="branchLength"></input>
+                     </div>
+                  </div>
+                  <div class="not_input">
+                     <div class="color">
+                        <div class="input_color">
+                           <label>Цвета дерева (<em>радуги</em>)</label>
+                           <input type="number" name="color" id="color"></input>
+                        </div>
+                        <table class="tb_color">
+                           <tbody>
+                              <tr>
+                                 <td>Вводить</td>
+                                 <td style="background: #000; color: white;">0</td>
+                                 <td style="background: red;">1</td>
+                                 <td style="background: orange;">2</td>
+                                 <td style="background: yellow;">3</td>
+                                 <td style="background: #0fb000;">4</td>
+                                 <td style="background: cyan;">5</td>
+                                 <td style="background: blue; color: white;">6</td>
+                                 <td style="background: #b0f;">7</td>
+                              </tr>
+                              <tr>
+                                 <td class="">На выбор</td>
+                                 <td style="background: #000; color: white;">Черный</td>
+                                 <td style="background: red;">Красный</td>
+                                 <td style="background: orange;">Ораньжевый</td>
+                                 <td style="background: yellow;">Жёлтый</td>
+                                 <td style="background: #0fb000;">Зелёный</td>
+                                 <td style="background: cyan;">Голубой</td>
+                                 <td style="background: blue; color: white;">Синий</td>
+                                 <td style="background: #b0f;">Фиолетовый</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="select">
+                  <select name="numberBranches" id="numberBranches">
+                     <option value="">--Выбирете количество веток--</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                  </select>
+                  <div class="button">
+                     <button type="button" name="branchAngle" id="branchAngleButton">Смоделировать дерево</button>
+                     <button type="button" name="branchAngle" id="reload">Обнулить дерево/<br>/Избавиться от лагов</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="canvas_info">
+            <!-- Писать здесь... Нормальную инфу!! Я проверю! --> 
+         </div>
+      </div>
+   </body>
+</html>
