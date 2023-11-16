@@ -417,6 +417,11 @@ a {
     display: flex;
     gap: 1vw;
   }
+  .koch_up .drawing_koch .canvas_koch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .koch_up .drawing_koch .buttons {
     display: flex;
     justify-content: center;

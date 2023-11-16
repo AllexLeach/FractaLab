@@ -448,7 +448,7 @@ a {
 			// margin-top: .5vw;
 			
 			.canvas_koch {
-				// box-shadow: 0 0 8px 0 rgb(0, 163, 5);
+				@include flex-center;
 			}
 
 			.buttons {
