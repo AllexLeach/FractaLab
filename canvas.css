@@ -11,6 +11,7 @@ html, body {
 body {
   margin-top: 0;
   overflow-X: hidden;
+  background: rgb(176, 190, 198);
 }
 
 p {
@@ -83,7 +84,7 @@ a {
     font-size: 20px;
   }
   .main_body .main_content .fractal_list li p:hover {
-    background: rgb(237, 237, 237);
+    background: rgb(170, 153, 204);
     border-bottom-right-radius: 60px 40px;
     border-bottom-left-radius: 50px 20px;
     border-top-right-radius: 50px 20px;
@@ -557,16 +558,10 @@ a {
     flex-direction: column;
     gap: 1vw;
   }
-  .koch_up .drawing_koch {
-    display: flex;
-    flex-direction: column;
-  }
   .koch_up .drawing_koch .canvas_koch {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 500px;
   }
   .koch_up .drawing_koch .buttons {
     display: flex;
@@ -584,7 +579,7 @@ a {
   }
   .koch_up .drawing_koch .button_for_reverse {
     border-radius: 20px;
-    box-shadow: 0 0 4px 2px rgb(100, 100, 100);
+    box-shadow: 0 0 4px 2px rgb(218, 218, 218);;
   }
   .koch_up .drawing_koch .button_for_reverse .btn_koch {
     width: 100%;

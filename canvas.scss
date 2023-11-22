@@ -38,6 +38,7 @@ html, body {
 body {
 	margin-top: 0;
 	overflow-X: hidden; 
+	background: rgb(176,190,198)  
 }
 
 p {
@@ -109,7 +110,7 @@ a {
 					}
 
 					p:hover {
-						background: rgb(237, 237, 237);
+						background: rgb(170, 153, 204);
 						border-bottom-right-radius: 60px 40px;
 						border-bottom-left-radius: 50px 20px;
 						border-top-right-radius: 50px 20px;
@@ -540,7 +541,7 @@ a {
 			flex-direction: column;
 
 			.canvas_koch {
-				@include flex-center;
+				// box-shadow: 0 0 8px 0 rgb(0, 163, 5);
             width: 500px;
             height: 500px;
 			}
