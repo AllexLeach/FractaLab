@@ -432,23 +432,117 @@ a {
 	}
 
 	//2 Page
+   
+   .body_koch {
+		display: flex;
+		flex-direction: column;
+		// display: grid;
+		// grid-template-rows: var(--left, 75px) auto;
+		transition: .7s ease-in-out;
+
+		.head {
+			transition: .7s ease-in-out;
+			position: fixed;
+			z-index: 2;
+			@include flex-center;
+			flex-direction: column;
+			align-items: start;
+			width: 100%;
+			height: 40px;
+			background: rgb(218, 218, 218);
+
+			.main_icon {
+				position: fixed;
+				top: 1vw;
+				z-index: 4;
+
+				img {
+					margin-left: 10px;
+					width: 30px;
+					height: 30px;
+					object-fit: cover;
+					animation: postRotateLittelIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+				}
+			}
+
+			.head_list {
+				position: fixed;
+				z-index: 3;
+				top: 2.5vw;
+				list-style-type: none;
+				@include flex-center;
+				flex-direction: column;
+				gap: 1.25vw;
+				font-size: $f-s;
+				font-family: $f-f;
+
+				@each $i in $i {
+					.l-#{$i} {
+						@include flex-center;
+						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+						opacity: 0;
+						transform: translate(-300px, 0);
+						width: 235px;
+					}
+				}
+			}
+		}
+	}
+
+	.head.active {
+		height: 150px;
+
+		.main_icon {
+			img {
+				animation: rotateLittleIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+			}
+		}
+
+		.head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+					opacity: 1;
+					transform: translate(50px, 0);
+				}
+
+				.l-#{$i}:hover {
+					transition: .6s ease-in-out;
+					background: rgb(255, 240, 240);
+					border-bottom-right-radius: 60px 40px;
+					border-bottom-left-radius: 50px 20px;
+					border-top-right-radius: 50px 20px;
+					border-top-left-radius: 60px 40px;
+				}
+			}
+		}
+	}
+
 
 	.koch_main {
 		display: block;
 		margin-top: .5vw;
 		margin-left: 1vw;
 		width: 98%;
+      font-size: $f-s;
+      font-family: $f-f;
 	}
 
 	.koch_up {
 		display: flex;
+      flex-direction: column;
 		gap: 1vw;
 
 		.drawing_koch {
 			// margin-top: .5vw;
-			
+         display: flex;
+			flex-direction: column;
+
 			.canvas_koch {
 				@include flex-center;
+            width: 500px;
+            height: 500px;
 			}
 
 			.buttons {

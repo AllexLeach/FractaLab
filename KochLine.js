@@ -4,8 +4,9 @@ var ctx = canvas.getContext('2d');
 var kochReverse = document.getElementById('button_reverse_koch');
 var iter = document.getElementById('select_iter_koch');
 
-var width = 500;
-var height = 500;
+
+var width = canvas.clientWidth;
+var height = canvas.clientHeight;
 var length = 400;
 var angleDeg = 60;
 
