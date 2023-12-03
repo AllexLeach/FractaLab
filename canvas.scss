@@ -38,7 +38,7 @@ html, body {
 body {
 	margin-top: 0;
 	overflow-X: hidden; 
-	background: rgb(176,190,198)  
+	// background: rgb(176,190,198)  
 }
 
 p {
@@ -1319,126 +1319,329 @@ a {
 		}
 	}
 	//page2
-	main {
+	.body_koch {
+		display: grid;
+		grid-template-columns: var(--left, 75px) auto;
+		grid-template-rows: none;
+		transition: .7s ease-in-out;
+
+		.head {
+			position: relative;
+			@include flex-center;
+			flex-direction: column;
+			justify-content: start;
+			max-width: 100%;
+			height: 100%;
+			background: rgb(218, 218, 218);
+
+			.main_icon {
+            @include flex-center;
+				position: fixed;
+				top: .5vw;
+
+				img {
+					margin-left: 0;
+					width: 50px;
+					height: 50px;
+					object-fit: cover;
+					animation: postRotateIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+				}
+			}
+
+			.head_list {
+				position: fixed;
+				top: 5vw;
+				list-style-type: none;
+				@include flex-center;
+				flex-direction: column;
+				gap: 1.25vw;
+				font-size: 1.85em;
+				font-family: $f-f;
+
+				@each $i in $i {
+					.l-#{$i} {
+						@include flex-center;
+						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+						opacity: 0;
+						transform: translate(-150px, 0);
+						width: 15vw;
+					}
+				}
+			}
+		}
+
+      .koch_main {
+         padding-bottom: 1vw;
+      }
+
+      .drawing_koch {
+         flex-direction: row;
+
+         .view_koch {
+            @include flex-center;
+            flex-direction: column;
+            gap: 1vw;
+
+            .buttons {
+               #select_iter_koch {
+                  font-size: 1.5rem;
+               }
+
+               .rev_btn {
+
+                  h2 {
+                     font-size: 1.85em;
+                  }
+               }
+            }
+         }
+
+         .koch_pref {
+            margin-top: 1vw;
+            margin-left: 1vw;
+
+            h2 {
+               font-size: 1.85em;
+            }
+
+            p {
+               font-size: 1.75em;
+            }
+         }
+      }
+
+      .info_koch {
+
+         h2 {
+            font-size: 1.85em;
+         }
+         
+         p {
+            font-size: 1.75em;
+         }
+      }
+
+      #canvas_Koch {
+         width: 27vw;
+         height: 27vw;
+      }
+	}
+
+   .body_koch:has(.head.active) {
+		--left: 400px;
+
+		.main_icon {
+			img {
+				animation: rotateIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+			}
+		}
+
+		.head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+
+				.l-#{$i}:hover {
+					transition: .6s ease-in-out;
+					background: rgb(255, 240, 240);
+					border-bottom-right-radius: 60px 40px;
+					border-bottom-left-radius: 50px 20px;
+					border-top-right-radius: 50px 20px;
+					border-top-left-radius: 60px 40px;
+				}
+			}
+		}
+	}
+
+   //page3
+   main {
 		display: flex;
 		width: 100%;
 		height: 100%;
 		
-		.canvas {
-			position: relative;;
-			margin-left: 5vw;
-			padding-top: 2vw;
-			font-size: $f-s + 14;
-			font-family: $f-f;
-		}
 	}
+   
+   .body_tree {
+      display: grid;
+		grid-template-columns: var(--left, 75px) auto;
+		grid-template-rows: none;
+		transition: .7s ease-in-out;
 
-	input {
-		font-size: $f-s - 4;
-		font-family: $f-f;
-	}
-
-
-	#canvas {
-		margin-left: 5vw;
-		margin-top: 2vw;
-	}
-
-	.body {
-		@include flex-center;
-
-		#canvas_Koch {
+		.head {
+			position: relative;
 			@include flex-center;
-			margin: 0;
-		}
-	}
-
-	.tb_color, tr, td {
-		border: 1.5px solid black;
-		border-collapse: collapse;
-		padding: 2.5px;
-	}
-
-	.variables {
-		display: flex;
-		width: 1050px;
-		margin-top: 2vw;
-		margin-left: 2.5vw;
-		gap: 1vw;
-
-		.a {
-			display: flex;
 			flex-direction: column;
-			width: 750px;
-			gap: 1vw;
+			justify-content: start;
+			max-width: 100%;
+			height: 100%;
+			background: rgb(218, 218, 218);
 
-			.var {
+			.main_icon {
+            @include flex-center;
+				position: fixed;
+				top: .5vw;
+
+				img {
+					margin-left: 0;
+					width: 50px;
+					height: 50px;
+					object-fit: cover;
+					animation: postRotateIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+				}
+			}
+
+			.head_list {
+				position: fixed;
+				top: 5vw;
+				list-style-type: none;
 				@include flex-center;
-				align-items: start;
-				width: 100%;
-				height: 100px;
-				gap: .5vw;
+				flex-direction: column;
+				gap: 1.25vw;
+				font-size: 1.85em;
+				font-family: $f-f;
 
-				
-				.input {
-					@include flex-center;
-					flex-direction: column;
-					justify-content: space-between;
-					align-items: start;
-					width: 100%;
-					height: 100%;
-					font-size: $f-s - 2;
-					font-family: $f-f;
-
-					em {
-						font-size: $f-s - 4;
-						font-family: $f-f;
+				@each $i in $i {
+					.l-#{$i} {
+						@include flex-center;
+						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+						opacity: 0;
+						transform: translate(-150px, 0);
+						width: 15vw;
 					}
 				}
-
 			}
-
-			.not_input {
-				@include flex-center;
-				flex-direction: column;
-				align-items: start;
-				gap: .5vw;
-
-				.color {
-					@include flex-center;
-					flex-direction: column;
-					align-items: start;
-					font-size: $f-s - 2;
-					font-family: $f-f;
-					gap: .5vw;
-				}
-			}
-
 		}
 
-		.select {
-			@include flex-center;
-			flex-direction: column;
-			justify-content: space-between;
-			width: 285px;
+      .canvas_pev {
+         display: flex;
 
-			select {
-				font-size: $f-s - 2;
-				font-family: $f-f;
+         .exem_tree {
+            
+            #canvas {
+               margin-left: 5vw;
+               margin-top: 2vw;
+            }
+
+            .canvas {
+               position: relative;;
+               margin-left: 2vw;
+               padding-top: 0.5vw;
+               font-size: 2.5em;
+               font-family: $f-f;
+            }
+         }
+      }
+   
+      .variables {
+         display: flex;
+         width: 1050px;
+         margin-top: 2vw;
+         margin-left: 2.5vw;
+         gap: 1vw;
+   
+         .a {
+            display: flex;
+            flex-direction: column;
+            width: 750px;
+            gap: 1vw;
+   
+            .var {
+               @include flex-center;
+               align-items: start;
+               width: 100%;
+               height: 100px;
+               gap: .5vw;
+   
+               
+               .input {
+                  @include flex-center;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  align-items: start;
+                  width: 100%;
+                  height: 100%;
+                  font-size: $f-s - 2;
+                  font-family: $f-f;
+               }
+   
+            }
+   
+            .not_input {
+               @include flex-center;
+               flex-direction: column;
+               align-items: start;
+               gap: .5vw;
+   
+               .color {
+                  @include flex-center;
+                  flex-direction: column;
+                  align-items: start;
+                  font-size: $f-s - 2;
+                  font-family: $f-f;
+                  gap: .5vw;
+               }
+            }
+   
+         }
+   
+         .select {
+            @include flex-center;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 285px;
+   
+            select {
+               font-size: $f-s - 2;
+               font-family: $f-f;
+            }
+   
+            .button {
+               @include flex-center;
+               flex-direction: column;
+               align-items: start;
+               width: 285px;
+               gap: .5vw;
+   
+               button {
+                  width: 100%;
+                  padding: 7.5px;
+                  font-size: $f-s - 2;
+                  font-family: $f-f;
+               }
+            }
+         }
+      }
+   }
+
+   .body_tree:has(.head.active) {
+		--left: 400px;
+
+		.main_icon {
+			img {
+				animation: rotateIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
 			}
+		}
 
-			.button {
-				@include flex-center;
-				flex-direction: column;
-				align-items: start;
-				width: 285px;
-				gap: .5vw;
+		.head_list {
 
-				button {
-					width: 100%;
-					padding: 7.5px;
-					font-size: $f-s - 2;
-					font-family: $f-f;
+			@each $i in $i {
+				.l-#{$i} {
+					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+
+				.l-#{$i}:hover {
+					transition: .6s ease-in-out;
+					background: rgb(255, 240, 240);
+					border-bottom-right-radius: 60px 40px;
+					border-bottom-left-radius: 50px 20px;
+					border-top-right-radius: 50px 20px;
+					border-top-left-radius: 60px 40px;
 				}
 			}
 		}

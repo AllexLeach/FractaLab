@@ -8,7 +8,7 @@ var height = canvas.height = 750 /*window.innerHeight;*/
 var branchAng = document.getElementById("branchAngle");
 var numBranch = document.getElementById("numberBranches");
 var ang = document.getElementById("angle3");
-var branchLen = document.getElementById("branchLength");
+var branchLen = document.getElementById("lengthBranch");
 var angle = 0;
 var i = document.getElementById('color');
 
@@ -21,8 +21,8 @@ document.getElementById("branchAngleButton").onclick = function() {
   var branchAngle = Math.PI / branchAng.value; // anything degrees
   var branchLength = height / branchLen.value; 
 
-  console.log(color[i.value]);
-  console.log(i.value);
+//   console.log(color[i.value]);
+//   console.log(i.value);
       
   function drawBranch(x, y, length, angle, depth) {
     if (depth > 0) {
@@ -61,3 +61,29 @@ document.getElementById("branchAngleButton").onclick = function() {
 document.getElementById("reload").onclick = function() {
   location.reload();
 }
+
+function drawBranchFirst(x, y, length, angle, depth) {
+   if (depth > 0) {
+      var x2 = x + Math.cos(angle) * length;
+      var y2 = y + Math.sin(angle) * length;
+       
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x2, y2);
+      ctx.strokeStyle = color[i.value];
+      ctx.lineWidth = depth * 1;
+      ctx.stroke()
+   
+      drawBranchFirst(x2, y2, length * 0.7, angle + (Math.PI/6), depth - 1);
+      drawBranchFirst(x2, y2, length * 0.7, angle - (Math.PI/6), depth - 1);
+   }
+}
+
+function animateFirst() {
+   angle += 0.01; 
+   ctx.clearRect(0, 0, width, height);
+   drawBranchFirst(width / 2, height - 50, height / 3.5, -Math.PI / 2, 9);
+   requestAnimationFrame(animateFirst);
+}
+     
+animateFirst();
