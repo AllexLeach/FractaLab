@@ -1300,7 +1300,7 @@ a {
     align-items: center;
     flex-direction: column;
     gap: 1.25vw;
-    font-size: 1.85em;
+    font-size: 22px;
     font-family: "Open Sans", sans-serif;
   }
   .body_koch .head .head_list .l-1 {
@@ -1310,7 +1310,7 @@ a {
     transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_koch .head .head_list .l-2 {
     display: flex;
@@ -1319,7 +1319,7 @@ a {
     transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_koch .head .head_list .l-3 {
     display: flex;
@@ -1328,7 +1328,7 @@ a {
     transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_koch .head .head_list .l-4 {
     display: flex;
@@ -1337,7 +1337,7 @@ a {
     transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_koch .koch_main {
     padding-bottom: 1vw;
@@ -1353,33 +1353,33 @@ a {
     gap: 1vw;
   }
   .body_koch .drawing_koch .view_koch .buttons #select_iter_koch {
-    font-size: 1.5rem;
+    font-size: 22px;
   }
   .body_koch .drawing_koch .view_koch .buttons .rev_btn h2 {
-    font-size: 1.85em;
+    font-size: 26px;
   }
   .body_koch .drawing_koch .koch_pref {
     margin-top: 1vw;
     margin-left: 1vw;
   }
   .body_koch .drawing_koch .koch_pref h2 {
-    font-size: 1.85em;
+    font-size: 26px;
   }
   .body_koch .drawing_koch .koch_pref p {
-    font-size: 1.75em;
+    font-size: 24px;
   }
   .body_koch .info_koch h2 {
-    font-size: 1.85em;
+    font-size: 26px;
   }
   .body_koch .info_koch p {
-    font-size: 1.75em;
+    font-size: 24px;
   }
   .body_koch #canvas_Koch {
     width: 27vw;
     height: 27vw;
   }
   .body_koch:has(.head.active) {
-    --left: 400px;
+    --left: 250px;
   }
   .body_koch:has(.head.active) .main_icon img {
     animation: rotateIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;
@@ -1481,7 +1481,7 @@ a {
     align-items: center;
     flex-direction: column;
     gap: 1.25vw;
-    font-size: 1.85em;
+    font-size: 22px;
     font-family: "Open Sans", sans-serif;
   }
   .body_tree .head .head_list .l-1 {
@@ -1491,7 +1491,7 @@ a {
     transition: 0.4s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_tree .head .head_list .l-2 {
     display: flex;
@@ -1500,7 +1500,7 @@ a {
     transition: 0.8s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_tree .head .head_list .l-3 {
     display: flex;
@@ -1509,7 +1509,7 @@ a {
     transition: 1.2s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_tree .head .head_list .l-4 {
     display: flex;
@@ -1518,7 +1518,7 @@ a {
     transition: 1.6s cubic-bezier(0.45, 0.13, 0.49, 1);
     opacity: 0;
     transform: translate(-150px, 0);
-    width: 15vw;
+    width: 235px;
   }
   .body_tree .canvas_pev {
     display: flex;
@@ -1531,7 +1531,7 @@ a {
     position: relative;
     margin-left: 2vw;
     padding-top: 0.5vw;
-    font-size: 2.5em;
+    font-size: 22px;
     font-family: "Open Sans", sans-serif;
   }
   .body_tree .variables {
@@ -1614,7 +1614,7 @@ a {
     font-family: "Open Sans", sans-serif;
   }
   .body_tree:has(.head.active) {
-    --left: 400px;
+    --left: 250px;
   }
   .body_tree:has(.head.active) .main_icon img {
     animation: rotateIcon 0.8s cubic-bezier(0.45, 0.13, 0.49, 1) 1 forwards;

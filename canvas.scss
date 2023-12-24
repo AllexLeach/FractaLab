@@ -1355,7 +1355,7 @@ a {
 				@include flex-center;
 				flex-direction: column;
 				gap: 1.25vw;
-				font-size: 1.85em;
+				font-size: $f-s + 2;
 				font-family: $f-f;
 
 				@each $i in $i {
@@ -1364,7 +1364,7 @@ a {
 						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
 						opacity: 0;
 						transform: translate(-150px, 0);
-						width: 15vw;
+						width: 235px;
 					}
 				}
 			}
@@ -1384,13 +1384,13 @@ a {
 
             .buttons {
                #select_iter_koch {
-                  font-size: 1.5rem;
+                  font-size: $f-s + 2;
                }
 
                .rev_btn {
 
                   h2 {
-                     font-size: 1.85em;
+                     font-size: $f-s + 6;
                   }
                }
             }
@@ -1401,11 +1401,11 @@ a {
             margin-left: 1vw;
 
             h2 {
-               font-size: 1.85em;
+               font-size: $f-s + 6;
             }
 
             p {
-               font-size: 1.75em;
+               font-size: $f-s + 4;
             }
          }
       }
@@ -1413,11 +1413,11 @@ a {
       .info_koch {
 
          h2 {
-            font-size: 1.85em;
+            font-size: $f-s + 6;
          }
          
          p {
-            font-size: 1.75em;
+            font-size: $f-s + 4;
          }
       }
 
@@ -1428,7 +1428,7 @@ a {
 	}
 
    .body_koch:has(.head.active) {
-		--left: 400px;
+		--left: 250px;
 
 		.main_icon {
 			img {
@@ -1501,7 +1501,7 @@ a {
 				@include flex-center;
 				flex-direction: column;
 				gap: 1.25vw;
-				font-size: 1.85em;
+				font-size: $f-s + 2;
 				font-family: $f-f;
 
 				@each $i in $i {
@@ -1510,7 +1510,7 @@ a {
 						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
 						opacity: 0;
 						transform: translate(-150px, 0);
-						width: 15vw;
+						width: 235px;
 					}
 				}
 			}
@@ -1530,7 +1530,7 @@ a {
                position: relative;;
                margin-left: 2vw;
                padding-top: 0.5vw;
-               font-size: 2.5em;
+               font-size: $f-s + 2;
                font-family: $f-f;
             }
          }
@@ -1618,7 +1618,7 @@ a {
    }
 
    .body_tree:has(.head.active) {
-		--left: 400px;
+		--left: 250px;
 
 		.main_icon {
 			img {
