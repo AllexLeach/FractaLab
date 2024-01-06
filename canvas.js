@@ -39,7 +39,7 @@ document.getElementById("branchAngleButton").onclick = function() {
    var numberBranches = numBranch.value;
 
    var angle3 = angValue;
-   var branchAngle = Math.PI / branchAngleValue; // anything degrees
+   var branchAngle = Math.PI / branchAngleValue;
    var branchLength = height / branchLen.value; 
 
 //   console.log(color[i.value]);
