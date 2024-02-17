@@ -7,6 +7,26 @@
 	align-items: center
 }
 
+@mixin title($font-s) {
+   position: relative;
+   z-index: 2;
+   font-size: $font-s;
+   border-radius: 10px;
+}
+
+@mixin under_title($width, $height, $x, $y) {
+   position: absolute;
+   z-index: 1;
+   width: $width;
+   height: $height;
+   background: rgb(199, 199, 199);
+   border-bottom-left-radius: 60px 40px;
+   border-bottom-right-radius: 50px 20px;
+   border-top-left-radius: 50px 20px;
+   border-top-right-radius: 60px 40px;
+   transform: rotate(-1.75deg) translate($x, $y);
+}
+
 $i: (1, 2, 3, 4);
 
 // @each $i in $i {
@@ -227,26 +247,13 @@ a {
 	.educational_program_of_fractal {
 		margin-top: .5vw;
 
+      
 		.title {
-			position: relative;
-			z-index: 2;
-			font-size: $f-s + 4;
-			border-radius: 10px;
+         @include title($f-s + 4);
 		}
 
 		.draw_under_title {
-			position: absolute;
-			// top: .45vw;
-			// left: 4vw;
-			z-index: 1;
-			width: 345px;
-			height: 40px;
-			background: rgb(199, 199, 199);
-			border-bottom-left-radius: 60px 40px;
-			border-bottom-right-radius: 50px 20px;
-			border-top-left-radius: 50px 20px;
-			border-top-right-radius: 60px 40px;
-			transform: rotate(-1.75deg) translate(-15px, -40px);
+         @include under_title(345px, 35px, -15px, -35px)
 		}
 
 		p {
@@ -286,22 +293,25 @@ a {
 		display: flex;
 		// flex-derection: column;
 
+      
 		.subtitle {
-			position: relative;
-			z-index: 2;
+         @include title($f-s + 2);
+			// position: relative;
+			// z-index: 2;
 		}
 
 		.draw_under_subtitle {
-			position: absolute;
-			z-index: 1;
-			width: 200px;
-			height: 30px;
-			background: rgb(199, 199, 199);
-			border-bottom-left-radius: 60px 40px;
-			border-bottom-right-radius: 50px 20px;
-			border-top-left-radius: 50px 20px;
-			border-top-right-radius: 60px 40px;
-			transform: rotate(-1.75deg) translate(-10px, -2.5px);
+         @include under_title(210px, 30px, -7.5px, 1.5px);
+			// position: absolute;
+			// z-index: 1;
+			// width: 200px;
+			// height: 30px;
+			// background: rgb(199, 199, 199);
+			// border-bottom-left-radius: 60px 40px;
+			// border-bottom-right-radius: 50px 20px;
+			// border-top-left-radius: 50px 20px;
+			// border-top-right-radius: 60px 40px;
+			// transform: rotate(-1.75deg) translate(-10px, -2.5px);
 		}
 	}
 
@@ -335,8 +345,8 @@ a {
 			margin-right: 1.5vw;
 
 			.draw_under_subtitle {
-				width: 200px;
-				transform: rotate(-1.75deg) translate(-7px, -2.5px);
+				width: 220px;
+				transform: rotate(-1.75deg) translate(-7px, 2.5px);
 			}
 		}
 
@@ -396,8 +406,8 @@ a {
 		margin-top: 2.5vw;
 
 		.draw_under_subtitle {
-			width: 185px;
-			transform: rotate(-1.75deg) translate(-10px, -2.5px);
+			width: 205px;
+			transform: rotate(-1.75deg) translate(-10px, 2.5px);
 		}
 
 		.stoh {
@@ -474,7 +484,7 @@ a {
 				@include flex-center;
 				flex-direction: column;
 				gap: 1.25vw;
-				font-size: $f-s;
+				font-size: $f-s + 2.75;
 				font-family: $f-f;
 
 				@each $i in $i {
@@ -483,7 +493,7 @@ a {
 						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
 						opacity: 0;
 						transform: translate(-300px, 0);
-						width: 235px;
+						width: 240px;
 					}
 				}
 			}
@@ -520,7 +530,6 @@ a {
 		}
 	}
 
-
 	.koch_main {
 		display: block;
 		margin-top: .5vw;
@@ -539,10 +548,7 @@ a {
 			// margin-top: .5vw;
          display: flex;
 			flex-direction: column;
-
-			.canvas_koch {
-				// box-shadow: 0 0 8px 0 rgb(0, 163, 5);
-			}
+         gap: 1vw;
 
 			.buttons {
 				// margin-left: 2vw;
@@ -559,6 +565,10 @@ a {
 				.rev_btn {
 					display: flex;
 					gap: .5vw;
+
+               h2 {
+                  font-size: $f-s + 4;
+               }
 				}
 			}
 
@@ -597,11 +607,32 @@ a {
 			flex-direction: column;
 			// justify-content: center;
 			font-family: $f-f;
-			font-size: $f-s;
-			gap: .5vw;
+         font-size: $f-s - 2;
+			gap: 1vw;
 
+         .koch_pref_title {
+            margin-left: 10px;
+            
+            .title {
+               @include title($f-s + 4)
+            }
+
+            .draw_under_title {
+               @include under_title(185px, 30px, -10px, -27.5px)
+            }
+
+            .second_draw_under_title {
+               @include under_title(115px, 30px, -7.5px, -27.5px)
+            }
+
+            .thred_draw_under_title {
+               @include under_title(195px, 30px, -8px, -30px)
+            }
+         }
+         
 			p {
-				text-indent: 10px;
+            font-size: $f-s;
+            text-indent: 10px;
 			}
 		}
 	}
@@ -612,9 +643,32 @@ a {
 		font-family: $f-f;
 		font-size: $f-s;
 
+      .info_koch_title {
+         .title {
+            @include title($f-s + 4);
+         }
+
+         .draw_under_title {
+            @include under_title(135px, 30px, -5px, -27.5px)
+         }
+      }
+
 		.list_koch {
-			margin-top: .3vw;
+         margin-top: 1vw;
 			padding-left: 30px;
+			padding-bottom: 2.5vw;
+         
+         li {
+            margin-top: 1vw;
+
+            p {
+               font-size: $f-s;
+            }
+         }
+
+         ::marker {
+            font-size: $f-s;
+         }
 		}
 	}
 }
@@ -1109,23 +1163,11 @@ a {
 		margin-top: .5vw;
 
 		.title {
-			position: relative;
-			z-index: 2;
-			font-size: $f-s + 16;
-			border-radius: 10px;
+         @include title($f-s + 16);
 		}
 
 		.draw_under_title {
-			position: absolute;
-			z-index: 1;
-			width: 235px;
-			height: 55px;
-			background: rgb(199, 199, 199);
-			border-bottom-left-radius: 60px 40px;
-			border-bottom-right-radius: 50px 20px;
-			border-top-left-radius: 50px 20px;
-			border-top-right-radius: 60px 40px;
-			transform: rotate(-1.75deg) translate(-15px, -50px);
+         @include under_title(235px, 55px, -15px, -50px);
 		}
 
 		p {
@@ -1170,16 +1212,7 @@ a {
 		}
 
 		.draw_under_subtitle {
-			position: absolute;
-			z-index: 1;
-			width: 240px;
-			height: 45px;
-			background: rgb(199, 199, 199);
-			border-bottom-left-radius: 60px 40px;
-			border-bottom-right-radius: 50px 20px;
-			border-top-left-radius: 50px 20px;
-			border-top-right-radius: 60px 40px;
-			transform: rotate(-1.75deg) translate(-10px, -5px);
+         @include under_title(240px, 45px, -10px, -5px);
 		}
 	}
 
@@ -1372,6 +1405,7 @@ a {
 
       .koch_main {
          padding-bottom: 1vw;
+         margin: 0;
       }
 
       .drawing_koch {
@@ -1535,25 +1569,11 @@ a {
                padding-top: 10px;
                
                .title {
-                  position: relative;
-                  z-index: 2;
-                  font-size: $f-s + 16;
-                  font-family: $f-f;
+                  @include title($f-s + 16);
                }
                
                .draw_under_title {
-                  position: absolute;
-                  top: 47.5px;
-                  // left: 4vw;
-                  z-index: 1;
-                  width: 220px;
-                  height: 45px;
-                  background: rgb(199, 199, 199);
-                  border-bottom-left-radius: 60px 40px;
-                  border-bottom-right-radius: 50px 20px;
-                  border-top-left-radius: 50px 20px;
-                  border-top-right-radius: 60px 40px;
-                  transform: rotate(-1.75deg) translate(-15px, -40px);
+                  @include under_title(220px, 45px, -15px, -42.5px);
                }
             }
          }
@@ -1582,25 +1602,13 @@ a {
             padding-top: 10px;
             
             .title {
-               position: relative;
-               z-index: 2;
-               font-size: $f-s + 16;
-               font-family: $f-f;
+               @include title($f-s + 16);
             }
 
             .draw_under_title {
-               position: absolute;
+               @include under_title(265px, 45px, -15px, -42.5px);
+               // position: absolute;
                top: 50px;
-               // left: 4vw;
-               z-index: 1;
-               width: 265px;
-               height: 45px;
-               background: rgb(199, 199, 199);
-               border-bottom-left-radius: 60px 40px;
-               border-bottom-right-radius: 50px 20px;
-               border-top-left-radius: 50px 20px;
-               border-top-right-radius: 60px 40px;
-               transform: rotate(-1.75deg) translate(-15px, -40px);
             }
          }
       }
@@ -1760,25 +1768,11 @@ a {
             padding-top: 10px;
             
             .title {
-               position: relative;
-               z-index: 2;
-               font-size: $f-s + 16;
-               font-family: $f-f;
+               @include title($f-s + 16);
             }
 
             .draw_under_title {
-               position: absolute;
-               top: 47.5px;
-               // left: 4vw;
-               z-index: 1;
-               width: 180px;
-               height: 45px;
-               background: rgb(199, 199, 199);
-               border-bottom-left-radius: 60px 40px;
-               border-bottom-right-radius: 50px 20px;
-               border-top-left-radius: 50px 20px;
-               border-top-right-radius: 60px 40px;
-               transform: rotate(-1.75deg) translate(-15px, -40px);
+               @include under_title(180px, 45px, -15px, -42.5px);
             }
          }
 

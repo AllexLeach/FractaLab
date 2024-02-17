@@ -4,14 +4,26 @@ var ctx = canvas.getContext('2d');
 var kochReverse = document.getElementById('button_reverse_koch');
 var iter = document.getElementById('select_iter_koch');
 
-
 var width = canvas.clientWidth;
 var height = canvas.clientHeight;
-var length = 400;
 var angleDeg = 60;
+var length;
+if (screen.width > 500) {
+   canvas.width = 500;
+   canvas.height = 500;
+   length = 388;
+} else {
+   canvas.width = screen.width;
+   canvas.height = screen.width;
+   length = screen.width - (screen.width / 4.5);
+};
+
+window.addEventListener('resize', () => {
+   location.reload();
+});
 
 var startPosition = {
-  x: canvas.width / 8,
+  x: canvas.width / 10,
   y: canvas.height / 3.5,
 };
 
