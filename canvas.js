@@ -1,22 +1,29 @@
 // Fractal Tree Algorithm
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+// let resizeCounter = 0;
 
-function adaptiveSize() {
-   if (screen.width > 750) {
-      canvas.width = 750;
-      canvas.height = 750;
-   } else {
-      canvas.width = screen.width;
-      canvas.height = screen.width;
-   };
-
-   window.addEventListener('resize', () => {
-      location.reload();
-   });
+// function adaptiveSize() {
+if (screen.width > 750) {
+   canvas.width = 750;
+   canvas.height = 750;
+} else {
+   canvas.width = screen.width;
+   canvas.height = screen.width;
 };
 
-adaptiveSize();
+//    // window.onresize = () => {
+//       if (resizeCounter == 5) {
+//          // location.reload();
+//          resizeCounter = 0
+//          console.log(resizeCounter)
+//       } else {
+//          resizeCounter += 1
+//       };
+//    // };
+// };
+
+// // adaptiveSize();
 
 var width = canvas.width /*window.innerWidth;*/
 var height = canvas.height /*window.innerHeight;*/
