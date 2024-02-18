@@ -2,8 +2,25 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
-var width = canvas.width = 750 /*window.innerWidth;*/
-var height = canvas.height = 750 /*window.innerHeight;*/
+function adaptiveSize() {
+   if (screen.width > 750) {
+      canvas.width = 750;
+      canvas.height = 750;
+   } else {
+      canvas.width = screen.width;
+      canvas.height = screen.width;
+   };
+
+   window.addEventListener('resize', () => {
+      location.reload();
+   });
+};
+
+adaptiveSize();
+
+var width = canvas.width /*window.innerWidth;*/
+var height = canvas.height /*window.innerHeight;*/
+
 
 var branchAng = document.getElementById("input_range_branchAngle");
 var numBranch = document.getElementById("numberBranches");

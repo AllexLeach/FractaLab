@@ -454,7 +454,7 @@ a {
 		.head {
 			transition: .7s ease-in-out;
 			position: fixed;
-			z-index: 2;
+			z-index: 3;
 			@include flex-center;
 			flex-direction: column;
 			align-items: start;
@@ -465,7 +465,7 @@ a {
 			.main_icon {
 				position: fixed;
 				top: 1vw;
-				z-index: 4;
+				z-index: 5;
 
 				img {
 					margin-left: 10px;
@@ -478,13 +478,13 @@ a {
 
 			.head_list {
 				position: fixed;
-				z-index: 3;
+				z-index: 4;
 				top: 2.5vw;
 				list-style-type: none;
 				@include flex-center;
 				flex-direction: column;
 				gap: 1.25vw;
-				font-size: $f-s + 2.75;
+				font-size: $f-s;
 				font-family: $f-f;
 
 				@each $i in $i {
@@ -498,43 +498,43 @@ a {
 				}
 			}
 		}
-	}
 
-	.head.active {
-		height: 150px;
-
-		.main_icon {
-			img {
-				animation: rotateLittleIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
-			}
-		}
-
-		.head_list {
-
-			@each $i in $i {
-				.l-#{$i} {
-					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
-					opacity: 1;
-					transform: translate(50px, 0);
-				}
-
-				.l-#{$i}:hover {
-					transition: .6s ease-in-out;
-					background: rgb(255, 240, 240);
-					border-bottom-right-radius: 60px 40px;
-					border-bottom-left-radius: 50px 20px;
-					border-top-right-radius: 50px 20px;
-					border-top-left-radius: 60px 40px;
-				}
-			}
-		}
+      // .head.active {
+      //    height: 150px;
+   
+      //    .main_icon {
+      //       img {
+      //          animation: rotateLittleIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+      //       }
+      //    }
+   
+      //    .head_list {
+   
+      //       @each $i in $i {
+      //          .l-#{$i} {
+      //             transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+      //             opacity: 1;
+      //             transform: translate(50px, 0);
+      //          }
+   
+      //          .l-#{$i}:hover {
+      //             transition: .6s ease-in-out;
+      //             background: rgb(255, 240, 240);
+      //             border-bottom-right-radius: 60px 40px;
+      //             border-bottom-left-radius: 50px 20px;
+      //             border-top-right-radius: 50px 20px;
+      //             border-top-left-radius: 60px 40px;
+      //          }
+      //       }
+      //    }
+      // }
 	}
 
 	.koch_main {
 		display: block;
-		margin-top: .5vw;
-		margin-left: 1vw;
-		width: 98%;
+		// margin-top: .5vw;
+		// margin-left: 1vw;
+		// width: 98%;
       font-size: $f-s;
       font-family: $f-f;
 	}
@@ -554,7 +554,7 @@ a {
 				// margin-left: 2vw;
 				display: flex;
 				justify-content: center;
-				gap: .5vw;
+				gap: 2.5vw;
 
 				select {
 					font-family: $f-f;
@@ -564,7 +564,7 @@ a {
 
 				.rev_btn {
 					display: flex;
-					gap: .5vw;
+					gap: 2.5vw;
 
                h2 {
                   font-size: $f-s + 4;
@@ -587,7 +587,7 @@ a {
 						width: 25px;
 						object-fit: fill;
 						padding: 4px;
-						margin-right: 1.5vw;
+						margin-right: 5vw;
 						margin-left: 0;
 						transition: .5s ease-out;
 					}
@@ -596,7 +596,7 @@ a {
 				.btn_koch.reverse {
 					img {
 						margin-right: 0;
-						margin-left: 1.5vw;
+						margin-left: 5vw;
 					}
 				}
 			}
@@ -609,6 +609,8 @@ a {
 			font-family: $f-f;
          font-size: $f-s - 2;
 			gap: 1vw;
+         margin-left: 1vw;
+   		width: 98%;
 
          .koch_pref_title {
             margin-left: 10px;
@@ -637,11 +639,12 @@ a {
 		}
 	}
 
-
 	.info_koch {
 		margin-top: 0.5vw;
 		font-family: $f-f;
 		font-size: $f-s;
+      margin-left: 1vw;
+		width: 98%;
 
       .info_koch_title {
          .title {
@@ -649,7 +652,7 @@ a {
          }
 
          .draw_under_title {
-            @include under_title(135px, 30px, -5px, -27.5px)
+            @include under_title(135px, 30px, -2.5px, -27.5px)
          }
       }
 
@@ -669,6 +672,350 @@ a {
          ::marker {
             font-size: $f-s;
          }
+		}
+	}
+
+   //page 3
+
+   .body_tree {
+      display: flex;
+		flex-direction: column;
+		// display: grid;
+		// grid-template-rows: var(--left, 75px) auto;
+		transition: .7s ease-in-out;
+
+		.head {
+			transition: .7s ease-in-out;
+			position: fixed;
+			z-index: 3;
+			@include flex-center;
+			flex-direction: column;
+			align-items: start;
+			width: 100%;
+			height: 40px;
+			background: rgb(218, 218, 218);
+
+			.main_icon {
+				position: fixed;
+				top: 1vw;
+				z-index: 5;
+
+				img {
+					margin-left: 10px;
+					width: 30px;
+					height: 30px;
+					object-fit: cover;
+					animation: postRotateLittelIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+				}
+			}
+
+			.head_list {
+				position: fixed;
+				z-index: 4;
+				top: 2.5vw;
+				list-style-type: none;
+				@include flex-center;
+				flex-direction: column;
+				gap: 1.25vw;
+				font-size: $f-s;
+				font-family: $f-f;
+
+				@each $i in $i {
+					.l-#{$i} {
+						@include flex-center;
+						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+						opacity: 0;
+						transform: translate(-300px, 0);
+						width: 240px;
+					}
+				}
+			}
+		}
+
+      .canvas_pev {
+         display: flex;
+         flex-direction: column;
+   
+         .canvas {
+            margin-left: 2.5vw;
+   
+            .title {
+               @include title($f-s + 4);
+            }
+   
+            .draw_under_title {
+               @include under_title(175px, 30px, -7.5px, -30px)
+            }
+         }
+         
+         #canvas {            
+            margin-left: 0;
+            margin-top: 10vw;
+         }
+      }
+
+      .canvas_trees_education {
+         margin-top: 50px;
+   
+         .top {
+            @include flex-center;
+            flex-direction: column;
+         }
+
+         .bottom {
+            width: 98%;
+            margin-left: 1vw;
+            margin-top: 2.5vw;
+            padding-bottom: 2vw;
+
+            .canvas_info_title {
+               margin-left: 1.5vw;
+      
+               .title {
+                  @include title($f-s + 4);
+               }
+      
+               .draw_under_title {
+                  @include under_title(140px, 30px, -7.5px, -30px)
+               }
+            }
+         }
+
+         p {
+            font-size: $f-s;
+            font-family: $f-f;
+         }
+      }
+
+      .variables {
+         @include flex-center;
+         margin-top: 2vw;
+         margin-right: 2.5vw;
+         margin-left: 2.5vw;
+         gap: 5vw;
+         flex-direction: column;
+   
+         .a {
+            display: flex;
+            flex-direction: column;
+            gap: 5vw;
+   
+            .var { 
+               display: flex;
+               flex-direction: column;
+               gap: 2.5vw;
+               
+               .input {
+                  @include flex-center;
+                  flex-direction: column;
+                  font-size: $f-s - 2;
+                  font-family: $f-f;
+                  height: 100%;
+                  gap: 1vw;
+
+                  input {
+                     width: 100%;
+                  }
+
+                  select {
+                     font-size: $f-s - 2;
+                     font-family: $f-f;
+                     transition: all .7s ease;
+                     border-radius: 10px;
+                  }
+
+                  select:hover {
+                     background: rgb(240, 240, 240);
+                  }
+
+                  select:focus-visible {
+                     outline: none;
+                  }
+               }
+   
+            }
+   
+            .not_input {
+               @include flex-center;
+               flex-direction: column;
+               align-items: start;
+               gap: .5vw;
+               width: 100%;
+   
+               .color {
+                  width: 100%;
+                  @include flex-center;
+                  flex-direction: column;
+                  align-items: start;
+                  font-size: $f-s - 2;
+                  font-family: $f-f;
+                  gap: .5vw;
+
+                  .input_color {
+                     width: 100%;
+                     display: flex;
+                     justify-content: space-around;
+
+                     select {
+                        font-size: $f-s - 2;
+                        font-family: $f-f;
+                        transition: all .7s ease;
+                        border-radius: 10px;
+                     }
+
+                     select:hover {
+                        background: rgb(240, 240, 240);
+                     }
+   
+                     select:focus-visible {
+                        outline: none;
+                     }
+                  }
+               }
+            }
+   
+         }
+   
+         .select {
+            @include flex-center;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 305px;
+            gap: 2.5vw;
+   
+            select {
+               font-size: $f-s - 2;
+               font-family: $f-f;
+               transition: all .7s ease;
+               border-radius: 10px;
+            }
+
+            select:hover {
+               background: rgb(240, 240, 240);
+            }
+
+            select:focus-visible {
+               outline: none;
+            }
+   
+            .button {
+               @include flex-center;
+               flex-direction: column;
+               align-items: start;
+               width: 305px;
+               gap: 2.5vw;
+   
+               button {
+                  --slice-color: rgb(199, 199, 199);
+                  width: 100%;
+                  padding: 7.5px;
+                  font-size: $f-s - 2;
+                  font-family: $f-f;
+                  border: none;
+                  animation: gradientButtonReverse .3s 1 both ease-in-out;
+                  border-radius: 10px;
+                  background: linear-gradient(rgb(199, 199, 199), rgb(199, 199, 199));
+                  transition: all .7s ease;
+               }
+
+               button:hover {
+                  --slice-color: rgb(199, 199, 199);
+                  border-radius: 40px;
+                  font-size: $f-s - 1;
+                  animation: gradientButton .3s 1 both ease-in-out;
+                  // background: linear-gradient(150deg, rgb(199, 199, 199), rgb(199, 199, 199), rgb(199, 199, 199), rgb(241, 241, 241), rgb(199, 199, 199));
+               }
+
+               button:focus-visible {
+                  outline: none;
+               }
+            }
+         }
+      }
+
+      .canvas_info {
+         width: 98%;
+         margin-left: .5vw;
+         margin-top: 5vw;
+
+         .canvas_info_title {
+            margin-left: 1vw;
+
+            .title {
+               @include title($f-s + 4);
+            }
+            .draw_under_title {
+               @include under_title(112.5px, 30px, -5px, -30px)
+            }
+         }
+
+         .info {
+
+            p {
+               font-size: $f-s;
+               font-family: $f-f;
+            }
+         }
+
+         .info_list {
+            margin-top: 1vw;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            
+
+            li {
+               display: flex;
+               height: 100%;
+
+               span {
+                  margin-top: 1vw;
+                  height: 100%;
+                  font-size: $f-s + 4;
+               }
+               .container_in_list {
+                  @include flex-center;
+                  flex-direction: column;
+                  gap: 1vw;
+                  padding-left: 15px;
+                  
+                  p {
+                     font-size: $f-s;
+                     font-family: $f-f;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   .head.active {
+		height: 150px;
+
+		.main_icon {
+			img {
+				animation: rotateLittleIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+			}
+		}
+
+		.head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+					opacity: 1;
+					transform: translate(50px, 0);
+				}
+
+				.l-#{$i}:hover {
+					transition: .6s ease-in-out;
+					background: rgb(255, 240, 240);
+					border-bottom-right-radius: 60px 40px;
+					border-bottom-left-radius: 50px 20px;
+					border-top-right-radius: 50px 20px;
+					border-top-left-radius: 60px 40px;
+				}
+			}
 		}
 	}
 }
@@ -802,6 +1149,58 @@ a {
 			}
 		}
 	}
+
+   .view_koch {
+      @include flex-center;
+      flex-direction: column;
+   }
+}
+
+@media (min-width: 760px) {
+   .body_tree {
+      
+      .canvas_pev {
+         #canvas {
+            margin-top: 0;
+         }
+      }
+
+      .variables {
+         flex-direction: row;
+         gap: 2vw;
+
+         .a {
+            gap: 2.5vw;
+            
+            .var {
+               flex-direction: row;
+               
+               .input {
+                  height: auto;
+                  justify-content: space-between;
+               }
+            }
+
+            .not_input {
+
+               .color {
+
+                  .input_color {
+                     justify-content: space-between;
+                  }
+               }
+            }
+         }
+
+         .select {
+            gap: 1vw;
+            
+            .button {
+               gap: 1vw;
+            }
+         }
+      }
+   }
 }
 
 @media (min-width: 1024px) {
@@ -992,6 +1391,219 @@ a {
 			}
 		}
 	}
+
+   //page 2
+   .body_koch {
+      display: grid;
+		grid-template-columns: var(--left, 55px) auto;
+		grid-template-rows: none;
+		transition: .7s ease-in-out;
+
+      .head {
+			position: relative;
+			@include flex-center;
+			flex-direction: column;
+			justify-content: start;
+			max-width: 100%;
+			height: 100%;
+			background: rgb(218, 218, 218);
+
+			.main_icon {
+				position: fixed;
+				top: .5vw;
+
+				img {
+					margin-left: 0vw;
+					right: 1vw;
+					width: 30px;
+					height: 30px;
+					object-fit: cover;
+					animation: postRotateLittelIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+				}
+			}
+
+			.head_list {
+				position: fixed;
+				top: 5vw;
+				list-style-type: none;
+				@include flex-center;
+				flex-direction: column;
+				gap: 1.25vw;
+				font-size: $f-s + 2;
+				font-family: $f-f;
+
+				@each $i in $i {
+					.l-#{$i} {
+						@include flex-center;
+						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+						opacity: 0;
+						transform: translate(-150px, 0);
+						width: 235px;
+					}
+				}
+			}
+		}
+
+   }
+
+   .body_koch:has(.head.active) {
+		--left: 250px;
+
+		.main_icon {
+			img {
+				animation: rotateLittleIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+			}
+		}
+
+		.head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+
+				.l-#{$i}:hover {
+					transition: .6s ease-in-out;
+					background: rgb(255, 240, 240);
+					border-bottom-right-radius: 60px 40px;
+					border-bottom-left-radius: 50px 20px;
+					border-top-right-radius: 50px 20px;
+					border-top-left-radius: 60px 40px;
+				}
+			}
+		}
+	}
+
+   .koch_up {
+      .drawing_koch {
+         .button_for_reverse {
+            .btn_koch {
+               img {
+                  margin-right: 2.5vw;
+               }
+            }
+            .btn_koch.reverse {
+               img {
+                  margin-left: 2.5vw;
+               }
+            }
+         }
+      }
+   }
+
+   //page 3
+   .body_tree {
+      display: grid;
+		grid-template-columns: var(--left, 55px) auto;
+		grid-template-rows: none;
+		transition: .7s ease-in-out;
+
+      .head {
+			position: relative;
+			@include flex-center;
+			flex-direction: column;
+			justify-content: start;
+			max-width: 100%;
+			height: 100%;
+			background: rgb(218, 218, 218);
+
+			.main_icon {
+				position: fixed;
+				top: .5vw;
+
+				img {
+					margin-left: 0vw;
+					right: 1vw;
+					width: 30px;
+					height: 30px;
+					object-fit: cover;
+					animation: postRotateLittelIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+				}
+			}
+
+			.head_list {
+				position: fixed;
+				top: 5vw;
+				list-style-type: none;
+				@include flex-center;
+				flex-direction: column;
+				gap: 1.25vw;
+				font-size: $f-s + 2;
+				font-family: $f-f;
+
+				@each $i in $i {
+					.l-#{$i} {
+						@include flex-center;
+						transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+						opacity: 0;
+						transform: translate(-150px, 0);
+						width: 235px;
+					}
+				}
+			}
+		}
+
+      .canvas_trees_education {
+         margin-top: 1vw;
+      }
+
+      .canvas_pev {
+         flex-direction: row;
+
+         .canvas {
+            position: absolute;
+         }
+
+         #canvas {
+            width: 500px;
+            height: 500px;
+            margin-top: 2vw;
+            margin-left: 2vw;
+         }
+      }
+
+      .variables {
+         flex-direction: column;
+
+         .a {
+            .var {
+               flex-direction: column;
+            }
+         }
+      }
+   }
+
+   .body_tree:has(.head.active) {
+		--left: 250px;
+
+		.main_icon {
+			img {
+				animation: rotateLittleIcon .8s cubic-bezier(.45, .13, .49, 1) 1 forwards;
+			}
+		}
+
+		.head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
+					opacity: 1;
+					transform: translate(0, 0);
+				}
+
+				.l-#{$i}:hover {
+					transition: .6s ease-in-out;
+					background: rgb(255, 240, 240);
+					border-bottom-right-radius: 60px 40px;
+					border-bottom-left-radius: 50px 20px;
+					border-top-right-radius: 50px 20px;
+					border-top-left-radius: 60px 40px;
+				}
+			}
+		}
+	}
 }
 
 @media (min-width: 1280px) {
@@ -1001,7 +1613,36 @@ a {
 			max-width: 250px;
 			max-height: 250px;
 		}
-	}	
+	}
+   .koch_up {
+      .drawing_koch {
+         flex-direction: row;
+      }
+   }
+   .body_tree {
+
+      .canvas_pev {
+         #canvas {
+            width: 650px;
+            height: 650px;
+         }
+      }
+
+      .canvas_info {
+         margin-top: 0vw;
+      }
+
+      .variables {
+         // flex-direction: row;
+         gap: 5vw;
+
+         .a {
+            .var {
+               flex-direction: row;
+            }
+         }
+      }
+   }
 }
 
 @media (min-width: 1440px) {
@@ -1016,7 +1657,15 @@ a {
 			max-width: 250px;
 			max-height: 250px;
 		}
-	}	
+	}
+
+   .body_koch {
+      .head {
+         .head_list {
+            font-size: $f-s;
+         }
+      }
+   }
 }
 
 @media (min-width: 1880px) {
@@ -1368,12 +2017,11 @@ a {
 			background: rgb(218, 218, 218);
 
 			.main_icon {
-            @include flex-center;
 				position: fixed;
 				top: .5vw;
 
 				img {
-					margin-left: 0;
+					right: 1vw;
 					width: 50px;
 					height: 50px;
 					object-fit: cover;
@@ -1388,7 +2036,7 @@ a {
 				@include flex-center;
 				flex-direction: column;
 				gap: 1.25vw;
-				font-size: $f-s + 2;
+				font-size: $f-s;
 				font-family: $f-f;
 
 				@each $i in $i {
@@ -1406,6 +2054,10 @@ a {
       .koch_main {
          padding-bottom: 1vw;
          margin: 0;
+
+         .koch_up {
+            gap: .5vw;
+         }
       }
 
       .drawing_koch {
@@ -1433,6 +2085,7 @@ a {
          .koch_pref {
             margin-top: 1vw;
             margin-left: 1vw;
+            gap: .5vw;
 
             h2 {
                font-size: $f-s + 6;
@@ -1441,17 +2094,29 @@ a {
             p {
                font-size: $f-s + 4;
             }
+
+            .koch_pref_title {
+               .title {
+                  font-size: $f-s + 5;
+               }
+            }
          }
       }
 
       .info_koch {
-
-         h2 {
-            font-size: $f-s + 6;
+         .info_koch_title {
+            margin-left: 1vw;
+            .title {
+               font-size: $f-s + 6;
+            }
          }
          
-         p {
-            font-size: $f-s + 4;
+         .list_koch {
+            li {
+               p {
+                  font-size: $f-s + 4;
+               }
+            }
          }
       }
 
@@ -1553,27 +2218,30 @@ a {
       .canvas_trees_education {
          width: 100%;
          height: 100%;
+         margin-top: 0vw;
 
          .top {
-            display: flex;
+            // display: flex;
             gap: 2vw;
+            flex-direction: row;
+            align-items: start;
          }
 
          .bottom {
-            margin-left: 2.5vw;
+            margin-top: 0;
+            margin-left: 1vw;
             margin-right: 2.5vw;
             padding-bottom: .75vw;
 
             .canvas_info_title {
                position: relative;
-               padding-top: 10px;
                
                .title {
                   @include title($f-s + 16);
                }
                
                .draw_under_title {
-                  @include under_title(220px, 45px, -15px, -42.5px);
+                  @include under_title(220px, 45px, -7.5px, -45px);
                }
             }
          }
@@ -1590,14 +2258,13 @@ a {
          flex-direction: column;
    
          #canvas {
-            width: 650px;
-            height: 650px;
-            margin-left: 3vw;
+            width: 700px;
+            height: 700px;
+            // margin-left: 3vw;
             margin-top: 2vw;
          }
 
          .canvas {
-            position: relative;
             margin-left: 2vw;
             padding-top: 10px;
             
@@ -1606,7 +2273,7 @@ a {
             }
 
             .draw_under_title {
-               @include under_title(265px, 45px, -15px, -42.5px);
+               @include under_title(265px, 45px, -5px, -37.5px);
                // position: absolute;
                top: 50px;
             }
@@ -1614,143 +2281,15 @@ a {
       }
    
       .variables {
-         display: flex;
-         margin-top: 2vw;
-         margin-right: 2.5vw;
-         margin-left: 2.5vw;
          gap: 1vw;
-   
-         .a {
-            display: flex;
-            flex-direction: column;
-            gap: 1vw;
-   
-            .var {
-               @include flex-center;
-               align-items: start;
-               gap: .5vw;
-   
-               
-               .input {
-                  @include flex-center;
-                  flex-direction: column;
-                  justify-content: space-between;
-                  align-items: start;
-                  font-size: $f-s - 2;
-                  font-family: $f-f;
-                  height: 100%;
+         padding-bottom: 10px;
 
-                  select {
-                     font-size: $f-s - 2;
-                     font-family: $f-f;
-                     transition: all .7s ease;
-                     border-radius: 10px;
-                  }
-
-                  select:hover {
-                     background: rgb(240, 240, 240);
-                  }
-
-                  select:focus-visible {
-                     outline: none;
-                  }
-               }
-   
-            }
-   
-            .not_input {
-               @include flex-center;
-               flex-direction: column;
-               align-items: start;
-               gap: .5vw;
-               width: 100%;
-   
-               .color {
-                  width: 100%;
-                  @include flex-center;
-                  flex-direction: column;
-                  align-items: start;
-                  font-size: $f-s - 2;
-                  font-family: $f-f;
-                  gap: .5vw;
-
-                  .input_color {
-                     width: 100%;
-                     display: flex;
-                     justify-content: space-around;
-
-                     select {
-                        font-size: $f-s - 2;
-                        font-family: $f-f;
-                        transition: all .7s ease;
-                        border-radius: 10px;
-                     }
-
-                     select:hover {
-                        background: rgb(240, 240, 240);
-                     }
-   
-                     select:focus-visible {
-                        outline: none;
-                     }
-                  }
-               }
-            }
-   
-         }
-   
          .select {
-            @include flex-center;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 285px;
-   
-            select {
-               font-size: $f-s - 2;
-               font-family: $f-f;
-               transition: all .7s ease;
-               border-radius: 10px;
-            }
+            width: auto;
 
-            select:hover {
-               background: rgb(240, 240, 240);
-            }
-
-            select:focus-visible {
-               outline: none;
-            }
-   
             .button {
-               @include flex-center;
-               flex-direction: column;
-               align-items: start;
-               width: 285px;
-               gap: .5vw;
-   
-               button {
-                  --slice-color: rgb(199, 199, 199);
-                  width: 100%;
-                  padding: 7.5px;
-                  font-size: $f-s - 2;
-                  font-family: $f-f;
-                  border: none;
-                  animation: gradientButtonReverse .3s 1 both ease-in-out;
-                  border-radius: 10px;
-                  background: linear-gradient(rgb(199, 199, 199), rgb(199, 199, 199));
-                  transition: all .7s ease;
-               }
-
-               button:hover {
-                  --slice-color: rgb(199, 199, 199);
-                  border-radius: 40px;
-                  font-size: $f-s - 1;
-                  animation: gradientButton .3s 1 both ease-in-out;
-                  // background: linear-gradient(150deg, rgb(199, 199, 199), rgb(199, 199, 199), rgb(199, 199, 199), rgb(241, 241, 241), rgb(199, 199, 199));
-               }
-
-               button:focus-visible {
-                  outline: none;
-               }
+               flex-direction: row;
+               width: auto;
             }
          }
       }
@@ -1758,8 +2297,7 @@ a {
       .canvas_info {
          display: flex;
          flex-direction: column;
-         gap: 1vw;
-
+         gap: 0vw;
          margin-right: 2.5vw;
 
          .canvas_info_title {
@@ -1772,19 +2310,20 @@ a {
             }
 
             .draw_under_title {
-               @include under_title(180px, 45px, -15px, -42.5px);
+               @include under_title(180px, 45px, -5px, -45px);
             }
          }
 
          .info p {
             text-indent: 10px;
-            font-size: $f-s + 6;
+            font-size: $f-s + 4;
             margin-top: 0.15vw;
          }
 
          .info_list {
             padding-left: 10px;
             padding-right: 10px;
+            margin-top: 0;
 
             li {
                @include flex-center;
@@ -1795,18 +2334,19 @@ a {
                   @include flex-center;
                   height: 100%;
                   font-size: $f-s + 16;
-                  padding-right: 20px;
                }
 
                .container_in_list {
-                  @include flex-center;
+                  // @include flex-center;
+                  flex-direction: row;
                   gap: .5vw;
+                  
+                  p {
+                     font-size: $f-s + 4;
+                  }
                }
             }
             
-            p {
-               font-size: $f-s + 6;
-            }
          }
 
          .info_list li:nth-child(2) {

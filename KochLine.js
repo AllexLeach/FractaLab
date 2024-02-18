@@ -8,19 +8,23 @@ var width = canvas.clientWidth;
 var height = canvas.clientHeight;
 var angleDeg = 60;
 var length;
-if (screen.width > 500) {
-   canvas.width = 500;
-   canvas.height = 500;
-   length = 388;
-} else {
-   canvas.width = screen.width;
-   canvas.height = screen.width;
-   length = screen.width - (screen.width / 4.5);
+function adaptiveSize() {
+   if (screen.width > 500) {
+      canvas.width = 500;
+      canvas.height = 500;
+      length = 388;
+   } else {
+      canvas.width = screen.width;
+      canvas.height = screen.width;
+      length = screen.width - (screen.width / 4.5);
+   };
+
+   window.addEventListener('resize', () => {
+      location.reload();
+   });
 };
 
-window.addEventListener('resize', () => {
-   location.reload();
-});
+adaptiveSize();
 
 var startPosition = {
   x: canvas.width / 10,
