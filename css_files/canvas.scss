@@ -199,7 +199,7 @@ a {
 	}
 
 	.head.active {
-		height: 150px;
+		height: 125px;
 
 		.main_icon {
 			img {
@@ -213,7 +213,7 @@ a {
 				.l-#{$i} {
 					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
 					opacity: 1;
-					transform: translate(50px, 0);
+					transform: translate(75px, 0);
 				}
 
 				.l-#{$i}:hover {
@@ -990,7 +990,7 @@ a {
    }
 
    .head.active {
-		height: 150px;
+		height: 115px;
 
 		.main_icon {
 			img {
@@ -1004,7 +1004,7 @@ a {
 				.l-#{$i} {
 					transition: .4s * $i cubic-bezier(.45, .13, .49, 1);
 					opacity: 1;
-					transform: translate(50px, 0);
+					transform: translate(25%, 0);
 				}
 
 				.l-#{$i}:hover {
@@ -1030,6 +1030,17 @@ a {
 		font-family: $f-f;
 		font-weight: bold;
 	}
+
+   .head.active {
+      .head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+               transform: translate(30%, 0);
+            }
+         }
+      }
+   }
 
 	.main_body {
 
@@ -1095,6 +1106,17 @@ a {
 		font-weight: bold;
 	}
 
+   .head.active {
+      .head_list {
+
+			@each $i in $i {
+				.l-#{$i} {
+               transform: translate(39%, 0);
+            }
+         }
+      }
+   }
+
 	.main_body {
 
 		.main_content {	
@@ -1157,6 +1179,30 @@ a {
 }
 
 @media (min-width: 760px) {
+   .body_ft, .body_koch, .body_tree {
+      .head {
+         height: 50px;
+   
+         .head_list {
+            top: 1vw;
+         }
+      }
+   }
+
+   .head.active {
+      height: 120px;
+
+      .head_list {
+         top: 1vw;
+
+			@each $i in $i {
+				.l-#{$i} {
+               transform: translate(20%, 0);
+            }
+         }
+      }
+   }
+
    .body_tree {
       
       .canvas_pev {
